@@ -1,6 +1,6 @@
 import mysql from 'mysql2';
 import dotenv from 'dotenv';
-import { DB_DATABASE, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER } from './config.js';
+import { MYSQL_DATABASE, MYSQL_HOST, MYSQL_PASSWORD, MYSQL_PORT, MYSQL_USER } from './config.js';
 
 dotenv.config();
 
@@ -9,11 +9,11 @@ const pool = mysql.createPool({
   //user: process.env.MYSQL_USER,
   //password: process.env.MYSQL_PASSWORD,
   //database: process.env.MYSQL_DATABASE,
-  host: DB_HOST,
-  user: DB_USER,
-  password: DB_PASSWORD,
-  database: DB_DATABASE,
-  port: DB_PORT,
+  host: MYSQL_HOST,
+  user: MYSQL_USER,
+  password: MYSQL_PASSWORD,
+  database: MYSQL_DATABASE,
+  port: MYSQL_PORT,
 }).promise();
 
 export const getTodoById = async (id) => {
